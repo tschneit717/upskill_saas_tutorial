@@ -33,7 +33,31 @@ h1, h2, h3 {
 
 .navbar {
   border:none;
+}
+
+.navbar-default .navbar-brand {
+  color:#333333;
+  -webkit-transition: opacity 0.5s; /* Safari */
+  transition: opacity 0.5s;
+}
+
+.navbar-default .navbar-brand:hover {
+  opacity:0.6;
+  -webkit-transition: opacity 0.5s; /* Safari */
+  transition: opacity 0.5s;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color:#333333;
+  -webkit-transition: opacity 0.5s; /* Safari */
+  transition: opacity 0.5s;
   
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  opacity:0.6;
+  -webkit-transition: opacity 0.5s; /* Safari */
+  transition: opacity 0.5s;
 }
 
 .home-callout {
