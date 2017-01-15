@@ -17,10 +17,13 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+
+//Typography styles
 h1, h2, h3 {
     font-family: 'Open Sans', sans-serif;
 }
 
+// Background gradient
 .navbar, .home-callout{
   //Gradient provided by @_ighosh at uiGradients.com
   background: #c2e59c; /* fallback for old browsers */
@@ -31,35 +34,24 @@ h1, h2, h3 {
   background: linear-gradient(to left, #c2e59c, #64b3f4); /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+// Nav styles
 .navbar {
   border:none;
 }
 
-.navbar-default .navbar-brand {
-  color:#333333;
-  -webkit-transition: opacity 0.5s; /* Safari */
-  transition: opacity 0.5s;
-}
-
-.navbar-default .navbar-brand:hover {
-  opacity:0.6;
-  -webkit-transition: opacity 0.5s; /* Safari */
-  transition: opacity 0.5s;
-}
-
+.navbar-default .navbar-brand, 
 .navbar-default .navbar-nav > li > a {
   color:#333333;
   -webkit-transition: opacity 0.5s; /* Safari */
   transition: opacity 0.5s;
-  
+  &:hover {
+     opacity:0.6;
+    -webkit-transition: opacity 0.5s; /* Safari */
+    transition: opacity 0.5s;
+  }
 }
 
-.navbar-default .navbar-nav > li > a:hover {
-  opacity:0.6;
-  -webkit-transition: opacity 0.5s; /* Safari */
-  transition: opacity 0.5s;
-}
-
+// Home styles
 .home-callout {
   margin-top: -20px;
   padding-top: 50px;
