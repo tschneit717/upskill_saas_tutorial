@@ -57,6 +57,17 @@ h1, h2, h3 {
   }
 }
 
+.navbar-default .navbar-toggle .icon-bar {
+  background-color:#333333;
+}
+
+.navbar-default .navbar-toggle {
+  border: 2px solid #333333;
+  &:hover, &:focus {
+     background-color:#c2e59c;
+  }
+}
+
 // Home styles
 .home-callout {
   margin-top: -20px;
@@ -64,3 +75,4 @@ h1, h2, h3 {
   padding-bottom: 100px;
   color:#333333;
 }
+
