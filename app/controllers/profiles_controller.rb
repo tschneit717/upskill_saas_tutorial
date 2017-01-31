@@ -1,12 +1,13 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :only_current_user
   
   # Get to /users/:user_id/profile/new
-  
   def new
   # Render blank profile details form
     @profile = Profile.new
   end
-  
+  # //////////////////////////////////////////////////////////////
   # POST to /users/:user_id/profile
   def create
     # Ensure that we have the user who is filling out form
@@ -20,13 +21,13 @@ class ProfilesController < ApplicationController
       render action: :new
     end
   end
-  
+  # ///////////////////////////////////////////////////////////////
   # Get requests to  /users/:user_id/profile/edit
   def edit 
     @user = User.find( params[:user_id] )
     @profile = @user.profile
   end
-  
+  # ///////////////////////////////////////////////////////////////  
   # PUT/Patch to /users/:user_id/profile
   def update 
     # Retrieve user from the database
@@ -46,5 +47,10 @@ class ProfilesController < ApplicationController
   private
     def profile_params
       params.require(:profile).permit(:first_name, :last_name, :avatar, :job_title, :phone_number, :contact_email, :description)
+    end
+  
+    def only_current_user
+      @user = User.find( params[:user_id] )
+      redirect_to(root_url) unless @user == current_user
     end
 end
